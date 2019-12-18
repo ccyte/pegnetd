@@ -2,12 +2,32 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/spf13/viper"
 	"strings"
 
 	"github.com/Factom-Asset-Tokens/factom"
 	"github.com/pegnet/pegnetd/fat/fat2"
 	"github.com/pegnet/pegnetd/node"
 )
+
+func Transfer(payment, source, asset, amt, dest string) (error, string, string) {
+	cl := node.FactomClientFromConfig(viper.GetViper())
+	var trans fat2.Transaction
+	if err := setTransactionInput(&trans, cl, source, asset, amt); err != nil {
+		return err, "", ""
+	}
+
+	if err := setTransferOutput(&trans, cl, dest, amt); err != nil {
+		return err, "", ""
+	}
+
+	err, txId, txHash := signAndSend(&trans, cl, payment)
+	if err != nil {
+		return err, "", ""
+	}
+
+	return nil, fmt.Sprintf("%s", txId), fmt.Sprintf("%s", txHash)
+}
 
 func signAndSend(tx *fat2.Transaction, cl *factom.Client, payment string) (err error, commit *factom.Bytes32, reveal *factom.Bytes32) {
 	// Get out private key

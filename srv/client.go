@@ -39,7 +39,7 @@ type Client struct {
 }
 
 // Defaults for the factomd and factom-walletd endpoints.
-const (
+var (
 	PegnetdDefault = "http://localhost:8070"
 )
 
