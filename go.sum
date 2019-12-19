@@ -29,6 +29,7 @@ github.com/Factom-Asset-Tokens/base58 v0.0.0-20181227014902-61655c4dd885 h1:rfy2
 github.com/Factom-Asset-Tokens/base58 v0.0.0-20181227014902-61655c4dd885/go.mod h1:RVXsRSp6VzXw5l1uiGazuf3qo23Qk0h1HzMcQk+X4LE=
 github.com/Factom-Asset-Tokens/factom v0.0.0-20191120022136-7bf60a31a324/go.mod h1:QwTTrmYvbvsDC7+ZzonzR0jmoT9BgPzaM0XsMJqCJFs=
 github.com/Factom-Asset-Tokens/factom v0.0.0-20191207221317-3707342f4ae9/go.mod h1:ab8HTelPY49ZAwJwALvMhoKPrw985cVgL/6pTh6waJM=
+github.com/Factom-Asset-Tokens/fatd v0.0.0-20191210203504-862410273b49/go.mod h1:JiHKkmtLhXM0pJS1CfgSZ6NXMJNw/sFGOY/T/e6o048=
 github.com/Factom-Asset-Tokens/fatd v0.6.1-0.20190927200133-81408234a2b5 h1:nJgckkWLVJxlZyfc5Wv8unMV9QmOQz6InW87MU8x0fg=
 github.com/Factom-Asset-Tokens/fatd v0.6.1-0.20190927200133-81408234a2b5/go.mod h1:BtAPS0V7pjfxo1rdQ+ZKiW8QYBxDcVskMxkY3JKQsqw=
 github.com/Factom-Asset-Tokens/fatd v0.6.1-0.20191210203504-862410273b49/go.mod h1:JiHKkmtLhXM0pJS1CfgSZ6NXMJNw/sFGOY/T/e6o048=
@@ -218,6 +219,7 @@ github.com/pegnet/LXR256 v0.0.0-20190721001507-5e925f415fa2/go.mod h1:11Z6s/PoxM
 github.com/pegnet/LXRHash v0.0.0-20191028162532-138fe8d191a2 h1:ec8NDi02ydYYKw/RpzFZypAh8rvyxZAvkeVVDBo+lxA=
 github.com/pegnet/LXRHash v0.0.0-20191028162532-138fe8d191a2/go.mod h1:0zBp9GFy9F77zuQbPkAmdUBRiptMaJ1V96eVFdMnXZA=
 github.com/pegnet/OracleRecord v0.0.2/go.mod h1:VrY7Shn4oSCli47CsUYBFjH68IenGYtnLaXaaivepu4=
+github.com/pegnet/pegnet v0.0.0-20191203215815-68d5b904b795/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
 github.com/pegnet/pegnet v0.0.2/go.mod h1:FUyEs8fyLOzPXZgyqXcqiOhQi58loNtujykIbxxoKbQ=
 github.com/pegnet/pegnet v0.3.0 h1:Oob388Zho3nzEHj4N9ZKbdSKR8t1nCJYTxsJJkeoHvM=
 github.com/pegnet/pegnet v0.3.0/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
