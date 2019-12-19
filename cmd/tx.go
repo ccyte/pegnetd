@@ -10,23 +10,60 @@ import (
 	"github.com/ccyte/pegnetd/node"
 )
 
-func Transfer(payment, source, asset, amt, dest string) (error, string, string) {
+func Transfer(fromAddr, asset, amt, toAddr string, fsAddr factom.FsAddress, esAddr factom.EsAddress) (error, string, string) {
 	cl := node.FactomClientFromConfig(viper.GetViper())
 	var trans fat2.Transaction
-	if err := setTransactionInput(&trans, cl, source, asset, amt); err != nil {
+	if err := setTransactionInput(&trans, cl, fromAddr, asset, amt); err != nil {
 		return err, "", ""
 	}
 
-	if err := setTransferOutput(&trans, cl, dest, amt); err != nil {
+	if err := setTransferOutput(&trans, cl, toAddr, amt); err != nil {
 		return err, "", ""
 	}
 
-	err, txId, txHash := signAndSend(&trans, cl, payment)
+	err, txId, txHash := signAndSendWithSAddr(&trans, cl, fsAddr, esAddr)
 	if err != nil {
 		return err, "", ""
 	}
 
 	return nil, fmt.Sprintf("%s", txId), fmt.Sprintf("%s", txHash)
+}
+
+func signAndSendWithSAddr(tx *fat2.Transaction, cl *factom.Client, fsAddr factom.FsAddress, esAddr factom.EsAddress) (err error, commit *factom.Bytes32, reveal *factom.Bytes32) {
+	var txBatch fat2.TransactionBatch
+	txBatch.Version = 1
+	txBatch.Transactions = []fat2.Transaction{*tx}
+	txBatch.ChainID = &node.TransactionChain
+
+	// Sign the tx and make an entry
+	err = txBatch.MarshalEntry()
+	if err != nil {
+		return fmt.Errorf("failed to marshal tx: %s", err.Error()), nil, nil
+	}
+
+	txBatch.Sign(fsAddr)
+
+	if err := txBatch.Validate(); err != nil {
+		return fmt.Errorf("invalid tx: %s", err.Error()), nil, nil
+	}
+
+	ec := esAddr.ECAddress()
+
+	bal, err := ec.GetBalance(cl)
+	if err != nil {
+		return fmt.Errorf("failed to get ec balance: %s\n", err.Error()), nil, nil
+	}
+
+	if cost, err := txBatch.Cost(false); err != nil || uint64(cost) > bal {
+		return fmt.Errorf("not enough ec balance for the transaction"), nil, nil
+	}
+
+	txid, err := txBatch.ComposeCreate(cl, esAddr, false)
+	if err != nil {
+		return fmt.Errorf("failed to submit entry: %s\n", err.Error()), nil, nil
+	}
+
+	return nil, txid, txBatch.Hash
 }
 
 func signAndSend(tx *fat2.Transaction, cl *factom.Client, payment string) (err error, commit *factom.Bytes32, reveal *factom.Bytes32) {
