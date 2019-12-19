@@ -7,8 +7,8 @@ import (
 	"github.com/Factom-Asset-Tokens/factom"
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/pegnet/pegnet/modules/grader"
-	"github.com/pegnet/pegnetd/config"
-	"github.com/pegnet/pegnetd/node/pegnet"
+	"github.com/ccyte/pegnetd/config"
+	"github.com/ccyte/pegnetd/node/pegnet"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

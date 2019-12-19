@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/Factom-Asset-Tokens/factom"
-	"github.com/pegnet/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/fat/fat2"
 )
 
 const createTableAddresses = `CREATE TABLE IF NOT EXISTS "pn_addresses" (

@@ -27,8 +27,8 @@ import (
 
 	jrpc "github.com/AdamSLevy/jsonrpc2/v13"
 	"github.com/Factom-Asset-Tokens/factom"
-	"github.com/pegnet/pegnetd/fat/fat2"
-	"github.com/pegnet/pegnetd/node/pegnet"
+	"github.com/ccyte/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/node/pegnet"
 )
 
 type Params interface {

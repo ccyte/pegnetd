@@ -3,7 +3,7 @@ package fat2_test
 import (
 	"testing"
 
-	. "github.com/pegnet/pegnetd/fat/fat2"
+	. "github.com/ccyte/pegnetd/fat/fat2"
 )
 
 func TestStringToTicker(t *testing.T) {

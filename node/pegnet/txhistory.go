@@ -9,7 +9,7 @@ import (
 
 	"github.com/Factom-Asset-Tokens/factom"
 	"github.com/pegnet/pegnet/modules/grader"
-	"github.com/pegnet/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/fat/fat2"
 	log "github.com/sirupsen/logrus"
 )
 

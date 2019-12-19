@@ -8,8 +8,8 @@ import (
 
 	"github.com/Factom-Asset-Tokens/factom"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/pegnet/pegnetd/fat/fat2"
-	. "github.com/pegnet/pegnetd/node/pegnet"
+	"github.com/ccyte/pegnetd/fat/fat2"
+	. "github.com/ccyte/pegnetd/node/pegnet"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

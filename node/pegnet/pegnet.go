@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/pegnet/pegnetd/config"
+	"github.com/ccyte/pegnetd/config"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

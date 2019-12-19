@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	. "github.com/pegnet/pegnetd/fat/fat2"
+	. "github.com/ccyte/pegnetd/fat/fat2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

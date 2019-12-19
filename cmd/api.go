@@ -12,11 +12,11 @@ import (
 	"time"
 
 	"github.com/Factom-Asset-Tokens/factom"
-	"github.com/pegnet/pegnetd/config"
-	"github.com/pegnet/pegnetd/fat/fat2"
-	"github.com/pegnet/pegnetd/node"
-	"github.com/pegnet/pegnetd/node/pegnet"
-	"github.com/pegnet/pegnetd/srv"
+	"github.com/ccyte/pegnetd/config"
+	"github.com/ccyte/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/node"
+	"github.com/ccyte/pegnetd/node/pegnet"
+	"github.com/ccyte/pegnetd/srv"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

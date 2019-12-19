@@ -28,8 +28,8 @@ import (
 	"strings"
 
 	jrpc "github.com/AdamSLevy/jsonrpc2/v13"
-	"github.com/pegnet/pegnetd/config"
-	"github.com/pegnet/pegnetd/node"
+	"github.com/ccyte/pegnetd/config"
+	"github.com/ccyte/pegnetd/node"
 	"github.com/rs/cors"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"

@@ -3,7 +3,7 @@ package cmd_test
 import (
 	"testing"
 
-	. "github.com/pegnet/pegnetd/cmd"
+	. "github.com/ccyte/pegnetd/cmd"
 )
 
 func TestFactoidToFactoshi(t *testing.T) {

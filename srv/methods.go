@@ -35,10 +35,10 @@ import (
 	"github.com/Factom-Asset-Tokens/factom"
 	sqlite3 "github.com/mattn/go-sqlite3"
 	"github.com/pegnet/pegnet/modules/conversions"
-	"github.com/pegnet/pegnetd/config"
-	"github.com/pegnet/pegnetd/fat/fat2"
-	"github.com/pegnet/pegnetd/node"
-	"github.com/pegnet/pegnetd/node/pegnet"
+	"github.com/ccyte/pegnetd/config"
+	"github.com/ccyte/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/node"
+	"github.com/ccyte/pegnetd/node/pegnet"
 )
 
 func (s *APIServer) jrpcMethods() jrpc.MethodMap {

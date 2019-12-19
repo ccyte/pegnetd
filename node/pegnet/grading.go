@@ -11,7 +11,7 @@ import (
 	"github.com/Factom-Asset-Tokens/factom"
 	"github.com/pegnet/pegnet/modules/grader"
 	"github.com/pegnet/pegnet/modules/opr"
-	"github.com/pegnet/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/fat/fat2"
 )
 
 const createTableGrade = `CREATE TABLE IF NOT EXISTS "pn_grade" (

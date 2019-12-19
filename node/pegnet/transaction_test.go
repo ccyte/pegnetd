@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	. "github.com/pegnet/pegnetd/node/pegnet"
+	. "github.com/ccyte/pegnetd/node/pegnet"
 	"github.com/stretchr/testify/assert"
 )
 

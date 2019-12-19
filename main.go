@@ -1,6 +1,6 @@
 package main
 
-import "github.com/pegnet/pegnetd/cmd"
+import "github.com/ccyte/pegnetd/cmd"
 
 // Launch the daemon from the cobra cli
 func main() {

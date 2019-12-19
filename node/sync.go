@@ -10,9 +10,9 @@ import (
 	"github.com/pegnet/pegnet/modules/conversions"
 	"github.com/pegnet/pegnet/modules/grader"
 	"github.com/pegnet/pegnet/modules/transactionid"
-	"github.com/pegnet/pegnetd/config"
-	"github.com/pegnet/pegnetd/fat/fat2"
-	"github.com/pegnet/pegnetd/node/pegnet"
+	"github.com/ccyte/pegnetd/config"
+	"github.com/ccyte/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/node/pegnet"
 	log "github.com/sirupsen/logrus"
 )
 

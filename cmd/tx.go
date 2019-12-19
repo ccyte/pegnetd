@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/Factom-Asset-Tokens/factom"
-	"github.com/pegnet/pegnetd/fat/fat2"
-	"github.com/pegnet/pegnetd/node"
+	"github.com/ccyte/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/node"
 )
 
 func Transfer(payment, source, asset, amt, dest string) (error, string, string) {

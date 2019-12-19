@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/pegnet/pegnetd/fat/fat2"
+	"github.com/ccyte/pegnetd/fat/fat2"
 
 	"github.com/Factom-Asset-Tokens/factom"
 )
