@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/viper"
 	"strings"
 
 	"github.com/Factom-Asset-Tokens/factom"
@@ -10,8 +9,7 @@ import (
 	"github.com/ccyte/pegnetd/node"
 )
 
-func Transfer(fromAddr, asset, amt, toAddr string, fsAddr factom.FsAddress, esAddr factom.EsAddress) (error, string, string) {
-	cl := node.FactomClientFromConfig(viper.GetViper())
+func Transfer(cl *factom.Client, fromAddr, asset, amt, toAddr string, fsAddr factom.FsAddress, esAddr factom.EsAddress) (error, string, string) {
 	var trans fat2.Transaction
 	if err := setTransactionInputWithoutCheckBalance(&trans, cl, fromAddr, asset, amt); err != nil {
 		return err, "", ""
