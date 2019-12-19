@@ -13,7 +13,7 @@ import (
 func Transfer(fromAddr, asset, amt, toAddr string, fsAddr factom.FsAddress, esAddr factom.EsAddress) (error, string, string) {
 	cl := node.FactomClientFromConfig(viper.GetViper())
 	var trans fat2.Transaction
-	if err := setTransactionInput(&trans, cl, fromAddr, asset, amt); err != nil {
+	if err := setTransactionInputWithoutCheckBalance(&trans, cl, fromAddr, asset, amt); err != nil {
 		return err, "", ""
 	}
 
@@ -127,6 +127,26 @@ func setTransferOutput(tx *fat2.Transaction, cl *factom.Client, dest, amt string
 	tx.Transfers = make([]fat2.AddressAmountTuple, 1)
 	tx.Transfers[0].Amount = uint64(amount)
 	if tx.Transfers[0].Address, err = factom.NewFAAddress(dest); err != nil {
+		return fmt.Errorf("failed to parse input: %s\n", err.Error())
+	}
+
+	return nil
+}
+
+func setTransactionInputWithoutCheckBalance(tx *fat2.Transaction, cl *factom.Client, source, asset, amt string) error {
+	var err error
+	if tx.Input.Type, err = ticker(asset); err != nil {
+		return err
+	}
+
+	amount, err := FactoidToFactoshi(amt)
+	if err != nil {
+		return fmt.Errorf("invalid amount specified: %s\n", err.Error())
+	}
+	tx.Input.Amount = uint64(amount)
+
+	// Set the input
+	if tx.Input.Address, err = factom.NewFAAddress(source); err != nil {
 		return fmt.Errorf("failed to parse input: %s\n", err.Error())
 	}
 
