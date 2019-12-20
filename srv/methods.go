@@ -33,12 +33,12 @@ import (
 
 	jrpc "github.com/AdamSLevy/jsonrpc2/v13"
 	"github.com/Factom-Asset-Tokens/factom"
-	sqlite3 "github.com/mattn/go-sqlite3"
-	"github.com/pegnet/pegnet/modules/conversions"
 	"github.com/ccyte/pegnetd/config"
 	"github.com/ccyte/pegnetd/fat/fat2"
 	"github.com/ccyte/pegnetd/node"
 	"github.com/ccyte/pegnetd/node/pegnet"
+	sqlite3 "github.com/mattn/go-sqlite3"
+	"github.com/pegnet/pegnet/modules/conversions"
 )
 
 func (s *APIServer) jrpcMethods() jrpc.MethodMap {
